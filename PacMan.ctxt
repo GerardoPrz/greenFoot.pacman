@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=PacMan
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=PacMan()
+comment1.text=\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ PacMan0\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=changeImage
+comment3.target=void\ resizeImage(int)
+comment4.params=
+comment4.target=void\ movement()
+comment5.params=
+comment5.target=int\ relocate()
+numComments=6
