@@ -19,16 +19,19 @@ public class player extends Actor
         
             if (Greenfoot.isKeyDown("right")){
                     x++;
-            } 
-            if (Greenfoot.isKeyDown("left")){
-                    x--;
-            } 
-            if (Greenfoot.isKeyDown("up")){
-                    y--;
-            } 
-            if (Greenfoot.isKeyDown("down")){
-                    y++;
+            } else{
+                if (Greenfoot.isKeyDown("left")){
+                        x--;
+                } else { 
+                    if (Greenfoot.isKeyDown("up")){
+                            y--;
+                    }else{ 
+                        if (Greenfoot.isKeyDown("down")){
+                            y++;
+                        }
+                    } 
                 }
+            }
              setLocation(x,y);
     }    
 }

@@ -30,6 +30,9 @@ public class HelpButton extends Actor
        if(appeared == 0){
            appeared = appear();
        }
+       if(Greenfoot.mouseClicked(this)){
+            Greenfoot.setWorld(new HelpScreen(getWorld()));
+        }
     }    
 
 

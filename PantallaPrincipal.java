@@ -7,7 +7,8 @@ import greenfoot.*;
  */
 public class PantallaPrincipal extends World
 {
-    int playSound;
+    private int playSound;
+    private static GreenfootSound sound = new GreenfootSound("PAC-MAN theme.mp3");
 
     /**
      * Constructor for objects of class PantallaPrincipal.
@@ -47,15 +48,21 @@ public class PantallaPrincipal extends World
     public void act(){
         if(playSound == 0){
         playSound = playMusic();
+
+        
     }
     }
 
     public int playMusic(){
         int wasPlayed = 0;
         if(playSound == 0){
-            Greenfoot.playSound("PAC-MAN theme.mp3");
+            sound.play();
             wasPlayed = 1;
         }
         return wasPlayed;
+    }
+
+    public static void stopMusic(){
+        sound.stop();
     }
 }

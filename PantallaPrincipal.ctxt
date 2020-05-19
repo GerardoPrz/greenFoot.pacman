@@ -11,4 +11,6 @@ comment3.params=
 comment3.target=void\ act()
 comment4.params=
 comment4.target=int\ playMusic()
-numComments=5
+comment5.params=
+comment5.target=void\ stopMusic()
+numComments=6

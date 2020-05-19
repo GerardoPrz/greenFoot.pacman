@@ -16,7 +16,7 @@ public class escenario extends World
     public escenario()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(960, 720, 1); 
+        super(900, 720, 1); 
         prepare();
     }
 
@@ -28,5 +28,6 @@ public class escenario extends World
     {
         player player = new player();
         addObject(player,666,321);
+        PantallaPrincipal.stopMusic();
     }
 }
