@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=RecordsManager
+comment1.params=
+comment1.target=RecordsManager()
+comment2.params=
+comment2.target=void\ list()
+comment3.params=
+comment3.target=void\ writeOnFile()
+comment4.params=
+comment4.target=void\ imprimir()
+comment5.params=record
+comment5.target=void\ sort(GameRecord)
+numComments=6

@@ -18,6 +18,7 @@ public class PantallaPrincipal extends World
         super(600, 400, 1);
         prepare();
         playSound = 0;
+        
     }
 
     /**
