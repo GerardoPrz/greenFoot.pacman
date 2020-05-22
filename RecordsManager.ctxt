@@ -10,4 +10,6 @@ comment4.params=
 comment4.target=void\ imprimir()
 comment5.params=record
 comment5.target=void\ sort(GameRecord)
-numComments=6
+comment6.params=
+comment6.target=java.util.List\ getList()
+numComments=7

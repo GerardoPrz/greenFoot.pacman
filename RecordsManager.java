@@ -21,7 +21,6 @@ public class RecordsManager
        list();
        imprimir();
        writeOnFile();
-       System.out.println("2");
     }
 
     public void list(){
@@ -39,9 +38,6 @@ public class RecordsManager
 
                record.setScore(Integer.parseInt(nameAndScore[0]));
                record.setPlayerName(nameAndScore[1]);
-               sort(record);
-                x++;
-                System.out.println(x);
            }
            
         } catch (IOException e) {
@@ -80,7 +76,6 @@ public class RecordsManager
             System.out.print(",");
             System.out.println(record1.getPlayerName());
         }
-        System.out.println(" 1\n");
     }
 
     private void sort(GameRecord record){
@@ -104,4 +99,8 @@ public class RecordsManager
             inputRecords.add(record);
         }
     }
+
+    public List<GameRecord> getList(){
+        return inputRecords;
+    }   
 }
