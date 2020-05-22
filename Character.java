@@ -19,8 +19,14 @@ public class Character extends Actor
     }    
 
     public void changeImage(String image){
-   System.out.println("image");
         String imageName = image + ".png";
         setImage(imageName);
     }
+
+    public void resize(){
+        GreenfootImage myImage = getImage();
+        int newHeight = (int)myImage.getHeight()+50;
+        int newWidth = (int)myImage.getWidth()/3;
+        myImage.scale(newHeight, newWidth);
+    }      
 }

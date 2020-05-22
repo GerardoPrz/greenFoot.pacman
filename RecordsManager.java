@@ -19,15 +19,12 @@ public class RecordsManager
     public RecordsManager(){
        recordsFile = new File("records.csv");
        list();
-       imprimir();
-       writeOnFile();
     }
 
     public void list(){
 
         try {
            List<String> lines = Files.readAllLines(Paths.get("records.csv"));
-            int x=0;
            Iterator<String> linesIterator = lines.iterator();
 
            while (linesIterator.hasNext()) {
@@ -38,6 +35,8 @@ public class RecordsManager
 
                record.setScore(Integer.parseInt(nameAndScore[0]));
                record.setPlayerName(nameAndScore[1]);
+
+               inputRecords.add(record);
            }
            
         } catch (IOException e) {
