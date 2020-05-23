@@ -13,8 +13,9 @@ public class fantasma extends Actor
      * Act - do whatever the fantasma wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     public fantasma(Actor player){
+     public fantasma(Actor player, String nameImage){
         this.player = player;
+        setImage(nameImage);
     }
     
     public void act() 
@@ -29,6 +30,7 @@ public class fantasma extends Actor
     public void eatPacman(){
         if(intersects(player)){
             getWorld().showText("You lose!",300,200);
+            Greenfoot.stop();
     }
 }
 }
