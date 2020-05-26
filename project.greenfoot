@@ -74,6 +74,7 @@ dependency8.type=UsesDependency
 dependency9.from=escenario
 dependency9.to=Square
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=232
@@ -81,6 +82,15 @@ editor.fx.0.y=-19
 height=694
 package.numDependencies=20
 package.numTargets=19
+=======
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=275
+editor.fx.0.y=-4
+height=744
+package.numDependencies=19
+package.numTargets=18
+>>>>>>> b5d0423199c8caccc12e1e766d4e8625e404f7c4
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -229,7 +239,12 @@ target9.width=100
 target9.x=0
 target9.y=0
 version=3.0.0
+<<<<<<< HEAD
 width=1294
 world.lastInstantiated=escenario
+=======
+width=1382
+world.lastInstantiated=PantallaPrincipal
+>>>>>>> b5d0423199c8caccc12e1e766d4e8625e404f7c4
 xPosition=0
 yPosition=0

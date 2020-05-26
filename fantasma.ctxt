@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=fantasma
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ fantasma\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=player
-comment1.target=fantasma(greenfoot.Actor)
+comment1.params=player\ nameImage
+comment1.target=fantasma(greenfoot.Actor,\ java.lang.String)
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ fantasma\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ act()

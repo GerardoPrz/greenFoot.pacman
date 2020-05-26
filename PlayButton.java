@@ -32,7 +32,7 @@ public class PlayButton extends Actor
        }
 
        if (Greenfoot.mouseClicked(this)) {
-        Greenfoot.setWorld(new escenario());
+        Greenfoot.setWorld(new escenario(getWorld()));
     }
     }    
 
