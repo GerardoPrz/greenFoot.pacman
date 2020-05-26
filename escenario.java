@@ -29,5 +29,25 @@ public class escenario extends World
         player player = new player();
         addObject(player,666,321);
         PantallaPrincipal.stopMusic();
+        Square square = new Square();
+        
+        //addObject(square, 175, 40);
+
+        for(int i = 0; i< 30; i++){ 
+            for(int j = 0; j < 31; j++){
+                addObject(new Square(), 180 + j*20, 48 + i*20);
+            }
+        }
+    }
+
+    public void act(){
+        /*MouseInfo mouse = Greenfoot.getMouseInfo();
+            if (Greenfoot.mouseClicked(null)) {
+             int x = mouse.getX();
+            int y = mouse.getY();
+            System.out.println(x + "," + y);
+        }*/
+
+        
     }
 }
