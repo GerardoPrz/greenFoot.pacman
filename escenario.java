@@ -1,4 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
+import java.util.List;
+import java.io.File;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.io.IOException;
 
 /**
  * Write a description of class escenario here.
@@ -9,6 +19,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class escenario extends World
 {
     World mainScreen;
+    ArrayList<ArrayList<String>> scenario = new ArrayList<ArrayList<String>>();
+
     /**
      * Constructor for objects of class escenario.
      * 
@@ -27,8 +39,10 @@ public class escenario extends World
      */
     private void prepare()
     {
-        player player = new player();
-        addObject(player,666,321);
+        readScenario();
+
+        player player = new player(scenario);
+        addObject(player,180,48);
         
         fantasma fantasma = new fantasma(player,"Pink.png");
         addObject(fantasma, 444, 215);
@@ -43,12 +57,10 @@ public class escenario extends World
         addObject(fantasma, 100, 215);
         
         ReturnButton returnButton = new ReturnButton(mainScreen);
-        addObject(returnButton, 100, 330);
+        addObject(returnButton, 70, 600);
         
         PantallaPrincipal.stopMusic();
         Square square = new Square();
-        
-        //addObject(square, 175, 40);
 
         for(int i = 0; i< 30; i++){ 
             for(int j = 0; j < 31; j++){
@@ -66,5 +78,39 @@ public class escenario extends World
         }*/
 
         
+    }
+
+    public void readScenario(){
+        try {
+           List<String> lines = Files.readAllLines(Paths.get("scenario.csv"));
+           Iterator<String> linesIterator = lines.iterator();
+
+           while (linesIterator.hasNext()) {
+               String csvLine = linesIterator.next();
+               ArrayList<String> xArray = new ArrayList<String>();
+               
+               String[] line = csvLine.split(",", 31);
+
+               for(int j = 0; j < 31; j++){
+                    xArray.add(line[j]);
+                }
+
+               scenario.add(xArray);
+           }
+           
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //imprimir();
+    }
+    
+    public void imprimir(){
+        
+        for(int i = 0; i < 30; i++){
+            for(int j = 0; j < 31; j++){    
+                System.out.print(scenario.get(i).get(j));
+            }
+            System.out.print("\n");
+        }
     }
 }

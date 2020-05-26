@@ -26,8 +26,8 @@ public class ReturnButton extends Actor
 
     private void resize(){
         GreenfootImage myImage = getImage();
-        int newHeight = (int)myImage.getHeight()-40;
-        int newWidth = (int)myImage.getWidth()/4-30;
-        myImage.scale(newHeight, newWidth);
+        int newHeight = (int)myImage.getHeight()/3-30;
+        int newWidth = (int)myImage.getWidth()/2-50;
+        myImage.scale(newWidth, newHeight);
     }
 }
