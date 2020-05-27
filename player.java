@@ -28,28 +28,27 @@ public class player extends Actor
         int x = getX();
         int y = getY();
             
-            j = (x-180)/20;
-            i = (y-48)/20;
+            j = (x-175)/20;
+            i = (y-43)/20;
         
-            if (Greenfoot.isKeyDown("right") && j < 31){
-                if(scenario.get(i).get(j+1) == "1"){
-                    x+=3;
-                    System.out.println("right");
+            if (Greenfoot.isKeyDown("right") && j < 30 && x < 800){
+                if(scenario.get(i).get(j+1).equals("1")){
+                    x+=2;
                 }
             } else{
-                if (Greenfoot.isKeyDown("left") && j > 0){
-                    if(scenario.get(i).get(j-1) == "1"){
-                        x--;
+                if (Greenfoot.isKeyDown("left") && j > 0 && x > 0){
+                    if(scenario.get(i).get(j-1).equals("1")){
+                        x-=2;
                     }
                 } else { 
-                    if (Greenfoot.isKeyDown("up") && i > 0){
-                        if(scenario.get(i-1).get(j) == "1"){
-                            y--;
+                    if (Greenfoot.isKeyDown("up") && i > 0 & y < 648){
+                        if(scenario.get(i-1).get(j).equals("1")){
+                            y-=2;
                         }
                     }else{ 
-                        if (Greenfoot.isKeyDown("down") && i < 30){
-                            if(scenario.get(i+1).get(j) == "1"){
-                                 y++;
+                        if (Greenfoot.isKeyDown("down") && i < 29 && y > 0){
+                            if(scenario.get(i+1).get(j).equals("1")){
+                                 y+=2;
                             }
                         }
                     } 
