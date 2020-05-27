@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -44,10 +45,16 @@ public class RecordsManager
         }
     }
 
-    private void writeOnFile(){
+    public void writeOnFile(){
         int timesWritten = 0;
 
         Iterator recordsIterator = inputRecords.iterator();
+
+        try(    PrintWriter eraser = new PrintWriter("records.csv")){
+            eraser.print("");
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
         
         while(recordsIterator.hasNext() && timesWritten < 5){
             GameRecord record = (GameRecord)recordsIterator.next();
@@ -59,11 +66,11 @@ public class RecordsManager
                     writer.append(String.valueOf(record.getScore())).append(",").append(record.getPlayerName());
                 }
             } catch (IOException e) {
+                e.printStackTrace();
             }
             
             timesWritten++;
         }
-        
     }
 
     public void imprimir(){
@@ -77,7 +84,7 @@ public class RecordsManager
         }
     }
 
-    private void sort(GameRecord record){
+    public void sort(GameRecord record){
         if (inputRecords.size() > 0) {
             Iterator<GameRecord> iterator = inputRecords.iterator();
             int counter = -1;
@@ -101,5 +108,5 @@ public class RecordsManager
 
     public List<GameRecord> getList(){
         return inputRecords;
-    }   
+    }
 }

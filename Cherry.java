@@ -10,7 +10,7 @@ public class Cherry extends Actor
 {
     private player player;
     private escenario scenario;
-    private int scaredStart = 0;
+    private float scaredStart = 0;
     Clock clock;
     int scare;
  
@@ -34,7 +34,7 @@ public class Cherry extends Actor
             scare = 1;
         }
         
-        if(scare == 1 && clock.getTotalSeconds() - scaredStart == 5){
+        if(scare == 1 && clock.getTotalSeconds() - scaredStart >= 15.0){
             scenario.eatGhost(0);
             scenario.removeObject(this);
         }

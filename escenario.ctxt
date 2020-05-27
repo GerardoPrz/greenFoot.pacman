@@ -15,4 +15,6 @@ comment5.params=
 comment5.target=void\ imprimir()
 comment6.params=scared
 comment6.target=void\ eatGhost(int)
-numComments=7
+comment7.params=mainScreen
+comment7.target=void\ gameOver(greenfoot.World)
+numComments=8

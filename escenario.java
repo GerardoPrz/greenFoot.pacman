@@ -20,10 +20,13 @@ public class escenario extends World
 {
     World mainScreen;
     ArrayList<ArrayList<String>> scenario = new ArrayList<ArrayList<String>>();
+    player player;    
     fantasma fantasma;
     fantasma fantasma1;
     fantasma fantasma2;
     fantasma fantasma3;
+    Clock clock;
+    RecordsManager recordsManager;
 
 
     /**
@@ -46,7 +49,7 @@ public class escenario extends World
     {
         readScenario();
 
-        player player = new player(scenario);
+        player = new player(scenario);
         addObject(player,180,48);
         
         fantasma = new fantasma(player,"Pink.png");
@@ -61,7 +64,7 @@ public class escenario extends World
         fantasma3 = new fantasma(player,"Yellow.png");
         addObject(fantasma3, 540, 320);
         
-        Clock clock = new Clock(this);
+        clock = new Clock(this);
 
         Cherry cherry = new Cherry(player, this, clock);
         addObject(cherry, 780, 48);
@@ -78,6 +81,8 @@ public class escenario extends World
         PantallaPrincipal.stopMusic();
         Square square = new Square();
 
+        recordsManager = new RecordsManager();
+        
         for(int i = 0; i< 30; i++){ 
             for(int j = 0; j < 31; j++){
                 addObject(new Square(), 180 + j*20, 48 + i*20);
@@ -86,14 +91,14 @@ public class escenario extends World
     }
 
     public void act(){
-        MouseInfo mouse = Greenfoot.getMouseInfo();
+        /*MouseInfo mouse = Greenfoot.getMouseInfo();
             if (Greenfoot.mouseClicked(null)) {
              int x = mouse.getX();
             int y = mouse.getY();
             System.out.println(x + "," + y);
-        }
-
+        }*/
         
+        clock.time();
     }
 
     public void readScenario(){
@@ -135,5 +140,9 @@ public class escenario extends World
         fantasma1.scare(scared);
         fantasma2.scare(scared);
         fantasma3.scare(scared);
+    }
+
+    public void gameOver(World mainScreen){
+        Greenfoot.setWorld(new SaveScreen(player.getScore()));
     }
 }

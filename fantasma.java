@@ -39,12 +39,15 @@ public class fantasma extends Actor
     }
 
     public void scare(int scared){
-        if(scared == 1){
-            setImage("ScaredGhost.png");
-            resize();
-        }else{
-            setImage(nameImage);
-            resize();
+        switch(scared){
+            case 0: 
+                    setImage(nameImage);
+                    resize();
+                    break;
+            case 1:
+                    setImage("ScaredGhost.png");
+                    resize(); 
+                    break;
         }
     }
 

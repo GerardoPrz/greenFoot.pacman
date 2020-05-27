@@ -25,8 +25,8 @@ public class Character extends Actor
 
     public void resize(){
         GreenfootImage myImage = getImage();
-        int newHeight = (int)myImage.getHeight()+50;
-        int newWidth = (int)myImage.getWidth()/3;
+        int newHeight = 50;
+        int newWidth = 50;
         myImage.scale(newHeight, newWidth);
     }      
 }

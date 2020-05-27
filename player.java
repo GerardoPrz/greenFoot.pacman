@@ -12,6 +12,7 @@ public class player extends Actor
     private ArrayList<ArrayList<String>> scenario = new ArrayList<ArrayList<String>>();
     private int i, j;
     int speed;
+    int score;
 
     public player(ArrayList<ArrayList<String>> scenario){
         this.scenario = scenario;
@@ -19,6 +20,7 @@ public class player extends Actor
         i = 0;
         j = 0;
         speed = 2;
+        score = 0;
     }
 
     /**
@@ -68,5 +70,9 @@ public class player extends Actor
 
     public void changeSpeed(int acceleration){
         speed += acceleration;
+    }
+
+    public int getScore(){
+        return score;
     }
 }

@@ -6,10 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Clock extends Actor
+public class Clock
 {
     private long start;
-    int totalSeconds;
+    float totalSeconds;
     Character minutes1; 
     Character minutes2; 
     Character seconds1;
@@ -28,32 +28,29 @@ public class Clock extends Actor
         seconds2  = new Character(); 
         scenario.addObject(seconds2, 122, 225);
     }
-    
-    /**
-     * Act - do whatever the Clock wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+
+    public void time() 
     {
         long end = System.currentTimeMillis();
-        totalSeconds = (int)((end - start) / 1000F);
 
-        System.out.println(totalSeconds);
-
-        int seconds = totalSeconds;
-        int minutes = (int)seconds / 60;
-        seconds -= minutes * 60;
-        
-        minutes2.changeImage(String.valueOf(minutes % 10));
-        minutes /= 10;
-        minutes1.changeImage(String.valueOf(minutes));
-        
-        seconds2.changeImage(String.valueOf(seconds % 10));
-        seconds /= 10;
-        seconds1.changeImage(String.valueOf(seconds));
+        if(end - totalSeconds >= 1.0){
+            totalSeconds = ((end - start) / 1000F);
+    
+            int seconds = (int)totalSeconds;
+            int minutes = seconds / 60;
+            seconds -= minutes * 60;
+            
+            minutes2.changeImage(String.valueOf(minutes % 10));
+            minutes /= 10;
+            minutes1.changeImage(String.valueOf(minutes));
+            
+            seconds2.changeImage(String.valueOf(seconds % 10));
+            seconds /= 10;
+            seconds1.changeImage(String.valueOf(seconds));
+        }
     }    
 
-    public int getTotalSeconds(){
+    public float getTotalSeconds(){
         return totalSeconds;
     }
 }
