@@ -9,16 +9,18 @@ public class PantallaPrincipal extends World
 {
     private int playSound;
     private static GreenfootSound sound = new GreenfootSound("PAC-MAN theme.mp3");
-
+    private static int n;
+    
     /**
      * Constructor for objects of class PantallaPrincipal.
      */
-    public PantallaPrincipal()
+    public PantallaPrincipal(int isNew)
     {
         super(600, 400, 1);
         prepare();
-        playSound = 0;
-        
+        if(isNew == 1){
+            escenario.stopMusic();
+        }
     }
 
     /**
@@ -51,7 +53,7 @@ public class PantallaPrincipal extends World
         playSound = playMusic();
 
         
-    }
+        }
     }
 
     public int playMusic(){

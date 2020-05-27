@@ -12,4 +12,6 @@ comment4.params=acceleration
 comment4.target=void\ changeSpeed(int)
 comment5.params=
 comment5.target=int\ getScore()
-numComments=6
+comment6.params=lastDir\ image\ upDown
+comment6.target=void\ changeImage(java.lang.String,\ int,\ java.lang.String)
+numComments=7

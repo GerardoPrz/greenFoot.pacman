@@ -30,6 +30,10 @@
        if(appeared == 0){
            appeared = appear();
        }
+       
+       if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("Select.mp3");
+        }
     }    
 
 

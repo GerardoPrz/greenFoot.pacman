@@ -18,7 +18,6 @@ import java.io.IOException;
  */
 public class escenario extends World
 {
-    World mainScreen;
     ArrayList<ArrayList<String>> scenario = new ArrayList<ArrayList<String>>();
     player player;    
     fantasma fantasma;
@@ -27,18 +26,19 @@ public class escenario extends World
     fantasma fantasma3;
     Clock clock;
     RecordsManager recordsManager;
+    public static GreenfootSound sound = new GreenfootSound("Music.mp3");
 
 
     /**
      * Constructor for objects of class escenario.
      * 
      */
-    public escenario(World mainScreen)
+    public escenario()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 720, 1); 
         prepare();
-        this.mainScreen = mainScreen;
+        sound.play();
     }
 
     /**
@@ -75,7 +75,7 @@ public class escenario extends World
         Chilli chilli = new Chilli(player);
         addObject(chilli, 185, 625);
         
-        ReturnButton returnButton = new ReturnButton(mainScreen);
+        ReturnButton returnButton = new ReturnButton(1);
         addObject(returnButton, 70, 600);
         
         PantallaPrincipal.stopMusic();
@@ -143,6 +143,12 @@ public class escenario extends World
     }
 
     public void gameOver(World mainScreen){
+        sound.stop();
+        Greenfoot.playSound("GameOver.mp3");
         Greenfoot.setWorld(new SaveScreen(player.getScore()));
+    }
+
+    public static void stopMusic(){
+        sound.stop();
     }
 }

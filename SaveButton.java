@@ -24,11 +24,12 @@ public class SaveButton extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("Select.mp3");
             GameRecord record = new GameRecord(line.getScore(), line.getName());
             recordsManager.sort(record);
             recordsManager.imprimir();
             recordsManager.writeOnFile();
-            Greenfoot.setWorld(new PantallaPrincipal());
+            Greenfoot.setWorld(new PantallaPrincipal(0));
         }
     }   
 

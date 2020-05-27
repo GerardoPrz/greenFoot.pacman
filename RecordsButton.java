@@ -25,6 +25,7 @@ public class RecordsButton extends Actor
            appeared = appear();
        }
        if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("Select.mp3");
             Greenfoot.setWorld(new RecordsScreen(getWorld()));
         }
     }    

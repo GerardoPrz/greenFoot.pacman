@@ -22,7 +22,8 @@ public class Chilli extends Actor
     public void act() 
     {
         if(intersects(player)){
-            player.changeSpeed(1);
+            player.changeSpeed(1);  
+            Greenfoot.playSound("Chilli.mp3");
             getWorld().removeObject(this);
         }
     }  

@@ -47,9 +47,9 @@ public class PacMan extends Actor
     public void movement(){
         move(20);
         if(changeImage == 0){
-            setImage("PacMan0.png");
+            setImage("PacManR0.png");
         }else{
-            setImage("PacMan1.png");
+            setImage("PacManR1.png");
         }
 
         try

@@ -18,7 +18,7 @@ public class HelpScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 370, 1); 
         
-        ReturnButton returnButton = new ReturnButton(mainScreen);
+        ReturnButton returnButton = new ReturnButton(0);
         addObject(returnButton, 100, 330);
     }
 

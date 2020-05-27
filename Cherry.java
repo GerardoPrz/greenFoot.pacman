@@ -32,11 +32,15 @@ public class Cherry extends Actor
             scenario.eatGhost(1);
             scaredStart = clock.getTotalSeconds();
             scare = 1;
+            setImage("blank.png");
+            Greenfoot.playSound("Cherry.mp3");
         }
         
         if(scare == 1 && clock.getTotalSeconds() - scaredStart >= 15.0){
             scenario.eatGhost(0);
-            scenario.removeObject(this);
+            scare = 0;
+            setImage("Cherry.png");
+            resize();
         }
     }  
 

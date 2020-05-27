@@ -18,7 +18,7 @@ public class RecordsScreen extends World
         recordsManager = new RecordsManager();
         printBillboard();
 
-        ReturnButton returnButton = new ReturnButton(mainScreen);
+        ReturnButton returnButton = new ReturnButton(0);
         addObject(returnButton, 100, 330);
        
     }
@@ -33,8 +33,7 @@ public class RecordsScreen extends World
         
         Iterator<GameRecord> recordsIterator = records.iterator();
 
-        Character recordLogo = new Character();
-        recordLogo.changeImage("RecordsLogo");
+        RecordsLogo recordLogo = new RecordsLogo();
         recordLogo.resize();
         addObject(recordLogo, 100, 180);
     

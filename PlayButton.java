@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayButton extends Actor
 {
-    int appeared;
+    private int appeared;
 
     public PlayButton(){
         resize();
@@ -32,8 +32,9 @@ public class PlayButton extends Actor
        }
 
        if (Greenfoot.mouseClicked(this)) {
-        Greenfoot.setWorld(new escenario(getWorld()));
-    }
+            Greenfoot.playSound("Select.mp3");
+            Greenfoot.setWorld(new escenario());
+        }
     }    
 
 

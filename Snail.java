@@ -22,6 +22,7 @@ public class Snail extends Actor
     public void act() 
     {
         if(intersects(player)){
+            Greenfoot.playSound("Snail.mp3");
             player.changeSpeed(-1);
             getWorld().removeObject(this);
         }

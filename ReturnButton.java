@@ -8,9 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ReturnButton extends Actor
 {
-    World mainScreen;
-    public ReturnButton(World mainScreen){
-        this.mainScreen = mainScreen;
+    private int isNew;
+
+    public ReturnButton(int isNew){
+        this.isNew = isNew;
         resize();
     }
     /**
@@ -20,14 +21,15 @@ public class ReturnButton extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(mainScreen);
+            Greenfoot.playSound("Select.mp3");
+            Greenfoot.setWorld(new PantallaPrincipal(isNew));
         }
     }    
 
     private void resize(){
         GreenfootImage myImage = getImage();
         int newHeight = (int)myImage.getHeight()/3-30;
-        int newWidth = (int)myImage.getWidth()/2-50;
+        int newWidth = (int)myImage.getWidth()/2-70;
         myImage.scale(newWidth, newHeight);
     }
 }

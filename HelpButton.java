@@ -31,6 +31,7 @@ public class HelpButton extends Actor
            appeared = appear();
        }
        if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("Select.mp3");
             Greenfoot.setWorld(new HelpScreen(getWorld()));
         }
     }    
