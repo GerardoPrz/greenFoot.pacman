@@ -8,7 +8,9 @@ import java.util.Random;
  */
 public class fantasma extends Actor
 {
-    public Actor player;
+    private Actor player;
+    String nameImage;
+
     /**
      * Act - do whatever the fantasma wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,6 +18,8 @@ public class fantasma extends Actor
      public fantasma(Actor player, String nameImage){
         this.player = player;
         setImage(nameImage);
+        resize();
+        this.nameImage = nameImage;
     }
     
     public void act() 
@@ -31,6 +35,23 @@ public class fantasma extends Actor
         if(intersects(player)){
             getWorld().showText("You lose!",300,200);
             Greenfoot.stop();
+        }
     }
-}
+
+    public void scare(int scared){
+        if(scared == 1){
+            setImage("ScaredGhost.png");
+            resize();
+        }else{
+            setImage(nameImage);
+            resize();
+        }
+    }
+
+    public void resize(){
+        GreenfootImage myImage = getImage();
+        int newHeight = 35;
+        int newWidth = 35;
+        myImage.scale(newHeight, newWidth);
+    }
 }

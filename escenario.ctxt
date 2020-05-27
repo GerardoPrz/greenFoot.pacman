@@ -13,4 +13,6 @@ comment4.params=
 comment4.target=void\ readScenario()
 comment5.params=
 comment5.target=void\ imprimir()
-numComments=6
+comment6.params=scared
+comment6.target=void\ eatGhost(int)
+numComments=7

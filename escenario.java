@@ -20,6 +20,11 @@ public class escenario extends World
 {
     World mainScreen;
     ArrayList<ArrayList<String>> scenario = new ArrayList<ArrayList<String>>();
+    fantasma fantasma;
+    fantasma fantasma1;
+    fantasma fantasma2;
+    fantasma fantasma3;
+
 
     /**
      * Constructor for objects of class escenario.
@@ -44,16 +49,16 @@ public class escenario extends World
         player player = new player(scenario);
         addObject(player,180,48);
         
-        fantasma fantasma = new fantasma(player,"Pink.png");
+        fantasma = new fantasma(player,"Pink.png");
         addObject(fantasma, 444, 215);
         
-        fantasma fantasma1 = new fantasma(player,"Blue.png");
+        fantasma1 = new fantasma(player,"Blue.png");
         addObject(fantasma, 200, 215);
         
-        fantasma fantasma2 = new fantasma(player,"Red.png");
+        fantasma2 = new fantasma(player,"Red.png");
         addObject(fantasma, 401, 215);
         
-        fantasma fantasma3 = new fantasma(player,"Yellow.png");
+        fantasma3 = new fantasma(player,"Yellow.png");
         addObject(fantasma, 100, 215);
         
         ReturnButton returnButton = new ReturnButton(mainScreen);
@@ -112,5 +117,12 @@ public class escenario extends World
             }
             System.out.print("\n");
         }
+    }
+
+    public void eatGhost(int scared){
+        fantasma.scare(scared);
+        fantasma1.scare(scared);
+        fantasma2.scare(scared);
+        fantasma3.scare(scared);
     }
 }
