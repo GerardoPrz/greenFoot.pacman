@@ -50,16 +50,27 @@ public class escenario extends World
         addObject(player,180,48);
         
         fantasma = new fantasma(player,"Pink.png");
-        addObject(fantasma, 444, 215);
+        addObject(fantasma, 420, 320);
         
         fantasma1 = new fantasma(player,"Blue.png");
-        addObject(fantasma, 200, 215);
+        addObject(fantasma1, 460, 320);
         
         fantasma2 = new fantasma(player,"Red.png");
-        addObject(fantasma, 401, 215);
+        addObject(fantasma2, 500, 320);
         
         fantasma3 = new fantasma(player,"Yellow.png");
-        addObject(fantasma, 100, 215);
+        addObject(fantasma3, 540, 320);
+        
+        Clock clock = new Clock(this);
+
+        Cherry cherry = new Cherry(player, this, clock);
+        addObject(cherry, 780, 48);
+
+        Snail snail = new Snail(player);
+        addObject(snail, 780, 625);
+
+        Chilli chilli = new Chilli(player);
+        addObject(chilli, 185, 625);
         
         ReturnButton returnButton = new ReturnButton(mainScreen);
         addObject(returnButton, 70, 600);
@@ -75,12 +86,12 @@ public class escenario extends World
     }
 
     public void act(){
-        /*MouseInfo mouse = Greenfoot.getMouseInfo();
+        MouseInfo mouse = Greenfoot.getMouseInfo();
             if (Greenfoot.mouseClicked(null)) {
              int x = mouse.getX();
             int y = mouse.getY();
             System.out.println(x + "," + y);
-        }*/
+        }
 
         
     }

@@ -33,8 +33,8 @@ public class fantasma extends Actor
     
     public void eatPacman(){
         if(intersects(player)){
-            getWorld().showText("You lose!",300,200);
-            Greenfoot.stop();
+            /*getWorld().showText("You lose!",300,200);
+            Greenfoot.stop();*/
         }
     }
 

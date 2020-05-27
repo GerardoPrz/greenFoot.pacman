@@ -28,13 +28,13 @@ public class Cherry extends Actor
      */
     public void act() 
     {
-        if(intersects(player)){
+        if(intersects(player) && scare == 0){
             scenario.eatGhost(1);
-            scaredStart = (int)clock.getTotalSeconds();
+            scaredStart = clock.getTotalSeconds();
             scare = 1;
         }
         
-        if(scare == 1 && (int)clock.getTotalSeconds() - scaredStart == 5){
+        if(scare == 1 && clock.getTotalSeconds() - scaredStart == 5){
             scenario.eatGhost(0);
             scenario.removeObject(this);
         }
