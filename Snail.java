@@ -24,6 +24,9 @@ public class Snail extends Actor
         if(intersects(player)){
             Greenfoot.playSound("Snail.mp3");
             player.changeSpeed(-1);
+            player.addScore(30);
+            escenario scenario = (escenario)getWorld();
+            scenario.refreshScore();
             getWorld().removeObject(this);
         }
     }  

@@ -90,7 +90,6 @@ public class Line
 
         while(iterator.hasNext()){
             finalName += iterator.next();
-            System.out.println(finalName);
         }
 
         return finalName;
