@@ -27,6 +27,10 @@ public class escenario extends World
     Clock clock;
     RecordsManager recordsManager;
     public static GreenfootSound sound = new GreenfootSound("Music.mp3");
+     private int playSound;
+    private Character score1;
+    private Character score2;
+    private Character score3;
 
 
     /**
@@ -38,7 +42,6 @@ public class escenario extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 720, 1); 
         prepare();
-        sound.play();
     }
 
     /**
@@ -52,17 +55,21 @@ public class escenario extends World
         player = new player(scenario);
         addObject(player,180,48);
         
-        fantasma = new fantasma(player,"Pink.png");
+        fantasma = new fantasma(player,"Pink.png", scenario);
         addObject(fantasma, 420, 320);
+        fantasma.initXY();
         
-        fantasma1 = new fantasma(player,"Blue.png");
+        fantasma1 = new fantasma(player,"Blue.png", scenario);
         addObject(fantasma1, 460, 320);
+        fantasma1.initXY();
         
-        fantasma2 = new fantasma(player,"Red.png");
+        fantasma2 = new fantasma(player,"Red.png", scenario);
         addObject(fantasma2, 500, 320);
+        fantasma2.initXY();
         
-        fantasma3 = new fantasma(player,"Yellow.png");
+        fantasma3 = new fantasma(player,"Yellow.png", scenario);
         addObject(fantasma3, 540, 320);
+        fantasma3.initXY();
         
         clock = new Clock(this);
 
@@ -79,24 +86,27 @@ public class escenario extends World
         addObject(returnButton, 70, 600);
         
         PantallaPrincipal.stopMusic();
-        Square square = new Square();
 
         recordsManager = new RecordsManager();
-        
-        for(int i = 0; i< 30; i++){ 
-            for(int j = 0; j < 31; j++){
-                addObject(new Square(), 180 + j*20, 48 + i*20);
-            }
-        }
+
+        score1 = new Character();
+        addObject(score1 , 45, 470);
+        score2 = new Character();
+        addObject(score2 , 72, 470);
+        score3 = new Character();
+        addObject(score3 , 99, 470);
     }
 
     public void act(){
+        if(playSound == 0)
+            playSound = playMusic();        
+
         /*MouseInfo mouse = Greenfoot.getMouseInfo();
             if (Greenfoot.mouseClicked(null)) {
              int x = mouse.getX();
             int y = mouse.getY();
             System.out.println(x + "," + y);
-        }*/
+            }*/
         
         clock.time();
     }
@@ -142,13 +152,32 @@ public class escenario extends World
         fantasma3.scare(scared);
     }
 
-    public void gameOver(World mainScreen){
+    public void gameOver(){
         sound.stop();
         Greenfoot.playSound("GameOver.mp3");
         Greenfoot.setWorld(new SaveScreen(player.getScore()));
     }
 
+    public int playMusic(){
+        int wasPlayed = 0;
+        if(playSound == 0){
+            sound.play();
+            wasPlayed = 1;
+        }
+        return wasPlayed;
+    }
+
     public static void stopMusic(){
         sound.stop();
     }
+
+    public void refreshScore(){
+        int score = player.getScore();
+
+        score3.changeImage(String.valueOf(score % 10));
+        score /= 10;
+        score2.changeImage(String.valueOf(score % 10));
+        score /= 10;
+        score1.changeImage(String.valueOf(score));
+    }    
 }

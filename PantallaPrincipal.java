@@ -50,7 +50,7 @@ public class PantallaPrincipal extends World
 
     public void act(){
         if(playSound == 0){
-        playSound = playMusic();
+            playSound = playMusic();
 
         
         }

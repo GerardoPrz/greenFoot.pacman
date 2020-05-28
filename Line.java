@@ -18,6 +18,7 @@ public class Line
     public Line(int score, World saveScreen){
         this.score = score;
         prepare(score, saveScreen);
+        String key = Greenfoot.getKey();
     }
     
     /**
@@ -29,7 +30,7 @@ public class Line
         int i = 0;
         String key = Greenfoot.getKey();
 
-        if(key != null){
+        if(key != null && !key.equals("up") && !key.equals("right") && !key.equals("down") && !key.equals("left")){
             if(key.equals("backspace") && name.size() > 0){
                 name.remove(name.size()-1);
             }else{
