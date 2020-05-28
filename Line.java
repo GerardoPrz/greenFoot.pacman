@@ -55,16 +55,20 @@ public class Line
         Character score1 = new Character(); 
         Character score2 = new Character();
         Character score3 = new Character();
+        Character score4 = new Character();
 
+        score4.changeImage(String.valueOf(score % 10));
+        score /= 10;
         score3.changeImage(String.valueOf(score % 10));
         score /= 10;
         score2.changeImage(String.valueOf(score % 10));
         score /= 10;
-        score1.changeImage(String.valueOf(score % 10));
+        score1.changeImage(String.valueOf(score));
 
         saveScreen.addObject(score1, 350, 175);
         saveScreen.addObject(score2, 385, 175);
         saveScreen.addObject(score3, 420, 175);
+        saveScreen.addObject(score4, 455, 175);
 
         Character name1 = new Character();
         saveScreen.addObject(name1, 350, 265);

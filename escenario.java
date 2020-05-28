@@ -31,6 +31,7 @@ public class escenario extends World
     private Character score1;
     private Character score2;
     private Character score3;
+    private Character score4;
     private String[] targetsMap={
     "1,1,1,1,1,1,1,1,1,1,1,1,1,1,,,,,,,,,,, 1,1,1,1,1,1,1,1,1,1,1,1",
     "1,0,0,0,0,0,1,0,0,0,0,0,0,1,,,,,,,,,,, 1,0,0,0,0,0,0,1,0,0,0,1",
@@ -123,11 +124,13 @@ public class escenario extends World
         recordsManager = new RecordsManager();
 
         score1 = new Character();
-        addObject(score1 , 45, 470);
+        addObject(score1 , 35, 470);
         score2 = new Character();
-        addObject(score2 , 72, 470);
+        addObject(score2 , 62, 470);
         score3 = new Character();
-        addObject(score3 , 99, 470);
+        addObject(score3 , 89, 470);
+        score4 = new Character();
+        addObject(score4 , 116, 470);
 
         dibujaEscenario();
     }
@@ -209,6 +212,8 @@ public class escenario extends World
     public void refreshScore(){
         int score = player.getScore();
 
+        score4.changeImage(String.valueOf(score % 10));
+        score /= 10;
         score3.changeImage(String.valueOf(score % 10));
         score /= 10;
         score2.changeImage(String.valueOf(score % 10));
