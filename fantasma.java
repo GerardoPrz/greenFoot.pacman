@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class fantasma extends Actor
+public class Fantasma extends Actor
 {
     private Actor player;
     private String nameImage;
@@ -30,7 +30,7 @@ public class fantasma extends Actor
      * Act - do whatever the fantasma wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     public fantasma(Actor player, String nameImage, ArrayList<ArrayList<String>> scenario){
+     public Fantasma(Actor player, String nameImage, ArrayList<ArrayList<String>> scenario){
         this.player = player;
         setImage(nameImage);
         resize();
@@ -68,14 +68,14 @@ public class fantasma extends Actor
     } 
     
     public void eatPacman(int scared){
-        escenario scenario = (escenario)getWorld();
+        Scenario scenario = (Scenario)getWorld();
         if(intersects(player)){
             switch(scared){
                 case 0: 
                     scenario.gameOver();
                     break;
                 case 1:
-                    player player1 = (player)player;
+                    Player player1 = (Player)player;
                     player1.addScore(30);
                     scenario.refreshScore();
                     scare(0);

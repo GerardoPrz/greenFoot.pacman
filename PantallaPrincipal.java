@@ -2,8 +2,9 @@ import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
 
-/**
- * 
+/*
+    Carreón Soto Luis Eduardo
+    Huerta Perez Raul Gerardo
  */
 public class PantallaPrincipal extends World
 {
@@ -19,7 +20,7 @@ public class PantallaPrincipal extends World
         super(600, 400, 1);
         prepare();
         if(isNew == 1){
-            escenario.stopMusic();
+            Scenario.stopMusic();
         }
     }
 

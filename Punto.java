@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Punto extends Actor
 {
-    private player player;
+    private Player player;
     /**
      * Act - do whatever the Punto wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Punto(player player){
+    public Punto(Player player){
         this.player = player;
         resize();
     }
@@ -22,7 +22,7 @@ public class Punto extends Actor
     {
         if(intersects(player)){
             player.addScore(10);
-            escenario scenario = (escenario)getWorld();
+            Scenario scenario = (Scenario)getWorld();
             scenario.refreshScore();
             getWorld().removeObject(this);
         }

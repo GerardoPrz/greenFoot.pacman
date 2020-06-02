@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Snail extends Actor
 {
-    private player player;
+    private Player player;
  
-    public Snail(player player){
+    public Snail(Player player){
         this.player = player;
         resize();
     }
@@ -25,7 +25,7 @@ public class Snail extends Actor
             Greenfoot.playSound("Snail.mp3");
             player.changeSpeed(-1);
             player.addScore(30);
-            escenario scenario = (escenario)getWorld();
+            Scenario scenario = (Scenario)getWorld();
             scenario.refreshScore();
             getWorld().removeObject(this);
         }

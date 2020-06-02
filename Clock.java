@@ -15,7 +15,7 @@ public class Clock
     Character seconds1;
     Character seconds2;
 
-    public Clock(escenario scenario){
+    public Clock(Scenario scenario){
         start = System.currentTimeMillis();
         totalSeconds = 0;
         

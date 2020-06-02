@@ -16,14 +16,14 @@ import java.io.IOException;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class escenario extends World
+public class Scenario extends World
 {
     ArrayList<ArrayList<String>> scenario = new ArrayList<ArrayList<String>>();
-    player player;    
-    fantasma fantasma;
-    fantasma fantasma1;
-    fantasma fantasma2;
-    fantasma fantasma3;
+    Player player;    
+    Fantasma fantasma;
+    Fantasma fantasma1;
+    Fantasma fantasma2;
+    Fantasma fantasma3;
     Clock clock;
     RecordsManager recordsManager;
     public static GreenfootSound sound = new GreenfootSound("Music.mp3");
@@ -71,7 +71,7 @@ public class escenario extends World
      * Constructor for objects of class escenario.
      * 
      */
-    public escenario()
+    public Scenario()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 720, 1); 
@@ -86,22 +86,22 @@ public class escenario extends World
     {
         readScenario();
 
-        player = new player(scenario);
+        player = new Player(scenario);
         addObject(player,180,48);
         
-        fantasma = new fantasma(player,"Pink.png", scenario);
+        fantasma = new Fantasma(player,"Pink.png", scenario);
         addObject(fantasma, 420, 320);
         fantasma.initXY();
         
-        fantasma1 = new fantasma(player,"Blue.png", scenario);
+        fantasma1 = new Fantasma(player,"Blue.png", scenario);
         addObject(fantasma1, 460, 320);
         fantasma1.initXY();
         
-        fantasma2 = new fantasma(player,"Red.png", scenario);
+        fantasma2 = new Fantasma(player,"Red.png", scenario);
         addObject(fantasma2, 500, 320);
         fantasma2.initXY();
         
-        fantasma3 = new fantasma(player,"Yellow.png", scenario);
+        fantasma3 = new Fantasma(player,"Yellow.png", scenario);
         addObject(fantasma3, 540, 320);
         fantasma3.initXY();
         

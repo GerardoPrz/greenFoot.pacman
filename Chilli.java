@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Chilli extends Actor
 {
-    private player player;
+    private Player player;
  
-    public Chilli(player player){
+    public Chilli(Player player){
         this.player = player;
         resize();
     }
@@ -24,7 +24,7 @@ public class Chilli extends Actor
         if(intersects(player)){
             player.changeSpeed(1);  
             player.addScore(10);
-            escenario scenario = (escenario)getWorld();
+            Scenario scenario = (Scenario)getWorld();
             scenario.refreshScore();
             Greenfoot.playSound("Chilli.mp3");
             getWorld().removeObject(this);

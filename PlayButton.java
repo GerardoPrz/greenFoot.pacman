@@ -33,7 +33,7 @@ public class PlayButton extends Actor
 
        if (Greenfoot.mouseClicked(this)) {
             Greenfoot.playSound("Select.mp3");
-            Greenfoot.setWorld(new escenario());
+            Greenfoot.setWorld(new Scenario());
         }
     }    
 

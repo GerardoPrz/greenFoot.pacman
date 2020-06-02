@@ -14,3 +14,6 @@ original, ya que se busca dar al jugador un sentimiento de nostalgia, con una te
 ochentera; aunque puede jugarlo cualquier persona, ya que los controles y mecánicas de
 juego son muy simples. El juego está diseñado para correr en PC ́s, con muy poca exigencia
 de recursos.
+
+##YouTube
+https://www.youtube.com/watch?v=U5DQMDMowXs

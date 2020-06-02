@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Cherry extends Actor
 {
-    private player player;
-    private escenario scenario;
+    private Player player;
+    private Scenario scenario;
     private float scaredStart = 0;
     Clock clock;
     int scare;
  
-    public Cherry(player player, escenario scenario, Clock clock){
+    public Cherry(Player player, Scenario scenario, Clock clock){
         this.player = player;
         this.scenario = scenario;
         this.clock = clock;

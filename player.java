@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class player extends Actor
+public class Player extends Actor
 {
     private ArrayList<ArrayList<String>> scenario = new ArrayList<ArrayList<String>>();
     private int i, j;
@@ -15,7 +15,7 @@ public class player extends Actor
     int score;
     String lastDir = "R";
 
-    public player(ArrayList<ArrayList<String>> scenario){
+    public Player(ArrayList<ArrayList<String>> scenario){
         this.scenario = scenario;
         resize();
         i = 0;
